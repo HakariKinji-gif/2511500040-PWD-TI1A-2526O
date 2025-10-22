@@ -5,3 +5,5 @@
 “aturan css untuk body dan global reset”
 "styling header"
 "Styling section #home"
+"styling footer"
+"styling navigasi"
