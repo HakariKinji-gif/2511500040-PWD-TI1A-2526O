@@ -167,4 +167,13 @@
           #contact button {
             width: 100%;
           }
+
+          @media (max-width: 400px) {
+            header {
+              padding: 16px;
+              position: sticky;
+              top: 0;
+              z-index: 1000;
+            }
+          }
         }
