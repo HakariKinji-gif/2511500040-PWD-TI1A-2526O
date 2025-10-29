@@ -41,10 +41,13 @@ alert("Terima kasih, " + nama.value + "!\nPesan Anda telah dikirim.");
 }
 });
 function showError(inputElement, message) {
-const label = inputElement.closest("label");
+const label = inputElement.parentElement;
 if (!label) return;
+
 label.style.flexWrap = "wrap";
-const small = document.createElement("small");
+
+const small = 
+document.createElement("small");
 small.className = "error-msg";
 small.textContent = message;
 small.style.color = "red";
@@ -53,14 +56,12 @@ small.style.display = "block";
 small.style.marginTop = "4px";
 small.style.flexBasis = "100%";
 small.dataset.forId = inputElement.id;
-if (inputElement.nextSibling) {
-label.insertBefore(small, inputElement.nextSibling);
-} else {
+
 label.appendChild(small);
-}
 inputElement.style.border = "1px solid red";
-alignErrorMessage(small, inputElement);
 }
+
+alignErrorMessage(small, inputElement);
 function alignErrorMessage(smallEl, inputEl) {
 const isMobile = window.matchMedia("(max-width: 600px)").matches;
 if (isMobile) {

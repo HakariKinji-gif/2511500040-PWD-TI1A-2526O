@@ -27,18 +27,29 @@
     <section id="home"> 
     <h2>Selamat Datang</h2>
     <?php
-    echo "halo dunia!";
-    ?>
-    <?php 
+    echo "halo dunia!<br>";
     echo "Perkenalkan, nama saya Hengky Febrilien.";
     ?>
     <p>Ini contoh paragraf HTML.</p>
 </section>
 
 <section id="about">
+    <?php
+    $nim = "2511500040";
+    $NIM = "2511569696";
+    $nama = "Fata Musta'qir";
+    $Nama = "Mustafat";
+    ?>
     <h2>Tentang saya</h2>
-    <p><strong>NIM:</strong>2511500040</p>
-    <p><strong>Nama Lengkap:</strong>Hengky Febrilien &#128526;</p>
+    <p><strong>NIM:</strong>
+    <?php
+        echo $nim;
+    ?>
+    </p>
+    <p><strong>Nama Lengkap:</strong>
+    <?php
+        echo "$nama";
+    ?> &#128526;</p>
     <p><strong>Tempat Lahir:</strong>Kota Pangkalpinang</p>
     <p><strong>Tanggal Lahir:</strong>12 Februari 2007</p>
     <p><strong>Hobi:</strong>Bermain Gitar, Bernyanyi &#127926; </p>
