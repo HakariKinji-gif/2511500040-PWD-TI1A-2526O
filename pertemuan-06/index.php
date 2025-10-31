@@ -108,6 +108,10 @@
     </p>
 </section>
 
+<section id="ipk">
+<h2>Nilai saya</h2>
+</section>
+
   <section id="contact">
 <h2>Kontak Kami</h2>
 <form action="" method="GET">
