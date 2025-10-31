@@ -5,4 +5,5 @@ NIM : 2511500040
 <ol>
 <li>hello.php</li>
 <li>index.php</li>
+<li>mengubah data diri di index.php dengan variabel php</li>
 </ol>

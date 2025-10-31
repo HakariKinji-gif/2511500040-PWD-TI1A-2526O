@@ -27,7 +27,7 @@
     <section id="home"> 
     <h2>Selamat Datang</h2>
     <?php
-    echo "halo dunia!<br>";
+    echo "Halo dunia!<br>";
     echo "Perkenalkan, nama saya Hengky Febrilien.";
     ?>
     <p>Ini contoh paragraf HTML.</p>
@@ -35,29 +35,77 @@
 
 <section id="about">
     <?php
-    $nim = "2511500040";
-    $NIM = "2511569696";
-    $nama = "Fata Musta'qir";
-    $Nama = "Mustafat";
+    $Nim = "2511500040";
+    $Nama = "Hengky Febrilien";
+    $TempatLahir = "Kota Pangkalpinang";
+    $TanggalLahir = "12 Februari 2007";
+    $hobi = "Bermain Gitar, Bernyanyi";
+    $Pasangan = "-";
+    $Pekerjaan = "Mahasiswa di ISB Atma Luhur";
+    $NamaOrangTua = "Bapak Santo dan Ibu Aini";
+    $NamaKakak = "-";
+    $NamaAdik = "Xeviola Geraldine";
+
     ?>
     <h2>Tentang saya</h2>
     <p><strong>NIM:</strong>
     <?php
-        echo $nim;
+        echo $Nim;
     ?>
     </p>
+
     <p><strong>Nama Lengkap:</strong>
     <?php
-        echo "$nama";
+        echo "$Nama";
     ?> &#128526;</p>
-    <p><strong>Tempat Lahir:</strong>Kota Pangkalpinang</p>
-    <p><strong>Tanggal Lahir:</strong>12 Februari 2007</p>
-    <p><strong>Hobi:</strong>Bermain Gitar, Bernyanyi &#127926; </p>
-    <p><strong>Pasangan:</strong>Belum punya</p>
-    <p><strong>Pekerjaan:</strong>Mahasiswa di ISB Atma Luhur &copy; 2025</p>
-    <p><strong>Nama Orang Tua:</strong>Bapak Santo dan Ibu Aini</p>
-    <p><strong>Nama kakak:</strong>-</p>
-    <p><strong>Nama Adik:</strong>Xeviola Geraldine</p>
+
+    <p><strong>Tempat Lahir:</strong>
+    <?php
+        echo "$TempatLahir";
+    ?>
+    </p>
+
+    <p><strong>Tanggal Lahir:</strong>
+    <?php
+        echo "$TanggalLahir";
+    ?>
+    </p>
+
+    <p><strong>Hobi:</strong>
+     <?php
+        echo "$hobi";
+        ?>
+    &#127926; </p>
+
+    <p><strong>Pasangan:</strong>
+    <?php
+        echo "$Pasangan";
+        ?>
+    </p>
+
+    <p><strong>Pekerjaan:</strong>
+    <?php
+        echo "$Pekerjaan";
+        ?>
+     &copy; 2025</p>
+
+    <p><strong>Nama Orang Tua:</strong>
+    <?php
+        echo "$NamaOrangTua";
+        ?>
+
+    </p>
+    <p><strong>Nama kakak:</strong>
+    <?php
+        echo "$NamaKakak";
+        ?>
+
+    </p>
+    <p><strong>Nama Adik:</strong>
+    <?php
+        echo "$NamaAdik";
+        ?>
+    </p>
 </section>
 
   <section id="contact">
