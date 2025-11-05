@@ -87,6 +87,7 @@
 
         #home h2,
         #about h2,
+        #ipk h2,
         #contact h2 {
             color: #0682da;
             border-bottom: 2px solid #0682da;
@@ -100,6 +101,7 @@
         }
 
         #about p,
+        #ipk p,
         #contact label {
           display: flex;
           justify-content: flex-start;
@@ -110,6 +112,7 @@
         }
 
         #about strong,
+        #ipk strong,
         #contact label>span {
           min-width: 180px;
           color: #0682da;

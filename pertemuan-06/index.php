@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 
 <body>
@@ -18,6 +18,7 @@
     <ul>
         <li><a href="#home">Beranda</a></li>
         <li><a href="#about">Tentang</a></li>
+        <li><a href="#ipk">Nilai</a></li>
         <li><a href="#contact">Kontak</a></li>
     </ul>
 </nav>
@@ -110,6 +111,63 @@
 
 <section id="ipk">
 <h2>Nilai saya</h2>
+<P> <?php 
+// --- DATA MATAKULIAH ---
+$namaMatkul = ["Kalkulus", "Apliaksi Perkantoran", "Logika Informatika", "Konsep Basis Data", "Pemrograman Web Dasar"];
+$sks = [3, 3, 3, 3, 3];
+$hadir = [100, 100, 100, 100, 100];
+$tugas = [100, 100, 100, 100, 100];
+$uts = [100, 100, 80, 80, 100];
+$uas = [90, 80, 85, 75, 100];
+
+$totalBobot = 0;
+$totalSKS = array_sum($sks);
+
+function hitungGrade($na, $nhadir) {
+    if ($nhadir < 70) return ["E", 0.00, "Gagal"];
+
+    if ($na >= 85) return ["A", 4.00, "Lulus"];
+    elseif ($na >= 80) return ["A-", 3.70, "Lulus"];
+    elseif ($na >= 75) return ["B+", 3.30, "Lulus"];
+    elseif ($na >= 70) return ["B", 3.00, "Lulus"];
+    elseif ($na >= 65) return ["B-", 2.70, "Lulus"];
+    elseif ($na >= 60) return ["C+", 2.30, "Lulus"];
+    elseif ($na >= 55) return ["C", 2.00, "Lulus"];
+    elseif ($na >= 50) return ["C-", 1.70, "Lulus"];
+    elseif ($na >= 40) return ["D", 1.00, "Gagal"];
+    else return ["E", 0.00, "Gagal"];
+}
+
+for ($i = 0; $i < 5; $i++) {
+
+    $nilaiAkhir = (0.1 * $hadir[$i]) + (0.2 * $tugas[$i]) + (0.3 * $uts[$i]) + (0.4 * $uas[$i]);
+
+    list($grade, $mutu, $status) = hitungGrade($nilaiAkhir, $hadir[$i]);
+
+    $bobot = $mutu * $sks[$i];
+    $totalBobot += $bobot;
+
+
+    echo"<p><strong>Nama Matakuliah ke-".($i+1)." :</strong> {$namaMatkul[$i]}<br></p>";
+    echo "<strong>SKS :</strong> {$sks[$i]}<br>";
+    echo "<strong>Kehadiran :</strong> {$hadir[$i]}<br>";
+    echo "<strong>Tugas :</strong> {$tugas[$i]}<br>";
+    echo "<strong>UTS :</strong> {$uts[$i]}<br>";
+    echo "<strong>UAS :</strong> {$uas[$i]}<br>";
+    echo "<strong>Nilai Akhir :</strong> ".round($nilaiAkhir)."<br>";
+    echo "<strong>Grade :</strong> $grade<br>";
+    echo "<strong>Angka Mutu :</strong> ".number_format($mutu, 2)."<br>";
+    echo "<strong>Bobot :</strong> ".number_format($bobot, 2)."<br>";
+    echo "<strong>Status :</strong> $status<br><br>";
+}
+
+$IPK = $totalBobot / $totalSKS;
+
+echo "<hr>";
+echo "Total Bobot: ".number_format($totalBobot, 2)."<br>";
+echo "Total SKS: $totalSKS<br>";
+echo "<strong>IPK: ".number_format($IPK, 2)."</strong><br>";
+?> </P>
 </section>
 
   <section id="contact">
