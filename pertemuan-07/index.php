@@ -86,7 +86,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Yohanes Setiawan Japriadi [0344300002]</p>
+    <p>&copy; 2025 Hengky Febrilien [2511500040]</p>
   </footer>
 
   <script src="script.js"></script>
