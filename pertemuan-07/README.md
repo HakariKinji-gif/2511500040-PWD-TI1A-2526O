@@ -8,5 +8,5 @@ Hari ini, Rabu, 5 November 2025 saya belajar<br>
     <li>download dan copy seluruh file dari dosen, kemudian extract ke file pertemuan-07</li>
      <li>copy dan rename index.php menjadi get,php, lalu membuat file baru dengan nama get_proses.php untuk action</li>
      <li>Isi get_proses.php</li>
-     
+     <li> session di get_proses.php</li>
 </ol>
