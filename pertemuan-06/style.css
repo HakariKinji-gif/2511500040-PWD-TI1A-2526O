@@ -101,7 +101,6 @@
         }
 
         #about p,
-        #ipk p,
         #contact label {
           display: flex;
           justify-content: flex-start;
@@ -110,6 +109,27 @@
           padding: 6px 0;
           border-bottom: 1px solid #e6e6e6;
         }
+        #ipk p {
+         display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+#ipk strong {
+  width: 180px; /* Menahan posisi rata kanan */
+  text-align: right;
+  padding-right: 12px;
+  color: #0682da;
+  font-weight: 600;
+}
+
+#ipk span {
+  flex: 1;
+  text-align: left;
+}
+
 
         #about strong,
         #ipk strong,

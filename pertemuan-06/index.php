@@ -149,16 +149,16 @@ for ($i = 0; $i < 5; $i++) {
 
 
     echo"<p><strong>Nama Matakuliah ke-".($i+1)." :</strong> {$namaMatkul[$i]}<br></p>";
-    echo "<strong>SKS :</strong> {$sks[$i]}<br>";
-    echo "<strong>Kehadiran :</strong> {$hadir[$i]}<br>";
-    echo "<strong>Tugas :</strong> {$tugas[$i]}<br>";
-    echo "<strong>UTS :</strong> {$uts[$i]}<br>";
-    echo "<strong>UAS :</strong> {$uas[$i]}<br>";
-    echo "<strong>Nilai Akhir :</strong> ".round($nilaiAkhir)."<br>";
-    echo "<strong>Grade :</strong> $grade<br>";
-    echo "<strong>Angka Mutu :</strong> ".number_format($mutu, 2)."<br>";
-    echo "<strong>Bobot :</strong> ".number_format($bobot, 2)."<br>";
-    echo "<strong>Status :</strong> $status<br><br>";
+    echo "<p><strong>SKS :</strong> {$sks[$i]}<br></p>";
+    echo "<p><strong>Kehadiran :</strong> {$hadir[$i]}<br></p>";
+    echo "<p><strong>Tugas :</strong> {$tugas[$i]}<br></p>";
+    echo "<p><strong>UTS :</strong> {$uts[$i]}<br></p>";
+    echo "<p><strong>UAS :</strong> {$uas[$i]}<br></p>";
+    echo "<p><strong>Nilai Akhir :</strong> ".round($nilaiAkhir)."<br></p>";
+    echo "<p><strong>Grade :</strong> $grade<br></p>";
+    echo "<p><strong>Angka Mutu :</strong> ".number_format($mutu, 2)."<br></p>";
+    echo "<p><strong>Bobot :</strong> ".number_format($bobot, 2)."<br></p>";
+    echo "<p><strong>Status :</strong> $status<br><br></p>";
 }
 
 $IPK = $totalBobot / $totalSKS;
