@@ -57,7 +57,7 @@ endif;
       <form action="proses.php" method="POST">
 
         <label for="txtNim"><span>NIM:</span>
-          <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required autocomplete="nim">
+          <input type="number" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required autocomplete="nim">
         </label>
 
         <label for="txtNama"><span>Nama:</span>
@@ -79,6 +79,14 @@ endif;
         
         <label for="txtPasangan"><span>Pasangan:</span>
           <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan" required autocomplete="Pasangan">
+        </label>
+
+        <label for="txtPekerjaan"><span>Pekerjaan:</span>
+          <input type="text" id="txtPekerjaan" name="txtPekerjaan" placeholder="Masukkan Pekerjaan" required autocomplete="Pekerjaan">
+        </label>
+
+        <label for="txtNamaOrangTua"><span>Nama Orang Tua:</span>
+          <input type="text" id="txtNamaOrangTua" name="txtNamaOrangTua" placeholder="Masukkan Nama Orang Tua" required autocomplete="Nama Orang Tua">
         </label>
 
 
