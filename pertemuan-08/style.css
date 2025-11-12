@@ -136,28 +136,28 @@ header li a:active {
 }
 
 #contact button[type="submit"],
-#visit button[type="submit"] {
+#visit button[type="send"] {
   background-color: #003366;
   color: #fff;
   font-weight: 600;
 }
 
 #contact button[type="reset"],
-#visit button[type="reset"]  {
+#visit button[type="cancel"]  {
   background-color: #b4b4b4;
   color: #272727;
   font-weight: 500;
 }
 
 #contact button[type="submit"]:hover,
-#visit button[type="submit"]:hover {
+#visit button[type="send"]:hover {
   background-color: #0379ee;
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 #contact button[type="reset"]:hover,
-#visit button[type="reset"]:hover {
+#visit button[type="cancel"]:hover {
   background-color: #cccccc;
   transform: translateY(-1px);
 }

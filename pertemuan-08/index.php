@@ -1,21 +1,18 @@
 <?php
 session_start();
 
-$sesnama = "";
-if (isset($_SESSION["sesnama"])):
-  $sesnama = $_SESSION["sesnama"];
-endif;
-
-$sesemail = "";
-if (isset($_SESSION["sesemail"])):
-  $sesemail = $_SESSION["sesemail"];
-endif;
-
-$sespesan = "";
-if (isset($_SESSION["sespesan"])):
-  $sespesan = $_SESSION["sespesan"];
-endif;
+$sesNIM          = $_SESSION["sesNIM"] ?? '';
+$sesName         = $_SESSION["sesName"] ?? '';
+$sesTempatLahir  = $_SESSION["sesTempatLahir"] ?? '';
+$sesTanggalLahir = $_SESSION["sesTanggalLahir"] ?? '';
+$sesHobi         = $_SESSION["sesHobi"] ?? '';
+$sesPasangan     = $_SESSION["sesPasangan"] ?? '';
+$sesPekerjaan    = $_SESSION["sesPekerjaan"] ?? '';
+$sesNamaOrangTua = $_SESSION["sesNamaOrangTua"] ?? '';
+$sesNamaKakak    = $_SESSION["sesNamaKakak"] ?? '';
+$sesNamaAdik     = $_SESSION["sesNamaAdik"] ?? '';
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +35,7 @@ endif;
         <li><a href="#home">Beranda</a></li>
         <li><a href="#about">Tentang</a></li>
         <li><a href="#contact">Kontak</a></li>
+        <li><a href="#visit">Form</a></li>
       </ul>
     </nav>
   </header>
@@ -47,21 +45,20 @@ endif;
       <h2>Selamat Datang</h2>
       <?php
       echo "halo dunia!<br>";
-      echo "nama saya hadi";
       ?>
       <p>Ini contoh paragraf HTML.</p>
     </section>
 
      <section id="visit">
       <h2>Pendaftaran Profil Pengunjung</h2>
-      <form action="proses.php" method="POST">
+      <form action="process.php" method="POST">
 
-        <label for="txtNim"><span>NIM:</span>
-          <input type="number" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required autocomplete="nim">
+        <label for="txtNIM"><span>NIM:</span>
+          <input type="text" id="txtNIM" name="txtNIM" placeholder="Masukkan NIM" required autocomplete="NIM">
         </label>
 
-        <label for="txtNama"><span>Nama:</span>
-          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
+        <label for="txtName"><span>Nama:</span>
+          <input type="text" id="txtName" name="txtName" placeholder="Masukkan Nama" required autocomplete="name">
         </label>
 
         <label for="txtTempatLahir"><span>Tempat Lahir:</span>
@@ -89,15 +86,24 @@ endif;
           <input type="text" id="txtNamaOrangTua" name="txtNamaOrangTua" placeholder="Masukkan Nama Orang Tua" required autocomplete="Nama Orang Tua">
         </label>
 
+         <label for="txtNamaKakak"><span>Nama Kakak:</span>
+          <input type="text" id="txtNamaKakak" name="txtNamaKakak" placeholder="Masukkan Nama Kakak" required autocomplete="Nama Kakak">
+        </label>
 
-        <button type="submit">Kirim</button>
-        <button type="reset">Batal</button>
+        <label for="txtNamaAdik"><span>Nama Adik:</span>
+          <input type="text" id="txtNamaAdik" name="txtNamaAdik" placeholder="Masukkan Nama Adik" required autocomplete="Nama Adik">
+        </label>
+
+
+
+        <button type="send">Kirim</button>
+        <button type="cancel">Batal</button>
       </form>
 
       <?php if (!empty($sesnama)): ?>
         <br><hr>
-        <h2>Yang menghubungi kami</h2>
-        <p><strong>Nama :</strong> <?php echo $sesnama ?></p>
+        <h2>Data</h2>
+        <p><strong>NIM :</strong> <?php echo $sesNIM ?></p>
         <p><strong>Email :</strong> <?php echo $sesemail ?></p>
         <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
       <?php endif; ?>
@@ -108,31 +114,19 @@ endif;
 
     <section id="about">
       <?php
-      $nim = 2511500010;
-      $NIM = '0344300002';
-      $nama = "Say'yid Abdullah";
-      $Nama = 'Al\'kautar Benyamin';
-      $tempat = "Jebus";
+  
       ?>
       <h2>Tentang Saya</h2>
-      <p><strong>NIM:</strong>
-        <?php
-        echo $NIM;
-        ?>
-      </p>
-      <p><strong>Nama Lengkap:</strong>
-        <?php
-        echo $Nama;
-        ?> &#128526;
-      </p>
-      <p><strong>Tempat Lahir:</strong> <?php echo $tempat; ?></p>
-      <p><strong>Tanggal Lahir:</strong> 1 Januari 2000</p>
-      <p><strong>Hobi:</strong> Memasak, coding, dan bermain musik &#127926;</p>
-      <p><strong>Pasangan:</strong> Belum ada &hearts;</p>
-      <p><strong>Pekerjaan:</strong> Dosen di ISB Atma Luhur &copy; 2025</p>
-      <p><strong>Nama Orang Tua:</strong> Bapak Setiawan dan Ibu Maria</p>
-      <p><strong>Nama Kakak:</strong> Antonius Setiawan</p>
-      <p><strong>Nama Adik:</strong> <?php echo $sespesan ?></p>
+      <p><strong>NIM:</strong><?php echo $sesNIM; ?></p>
+      <p><strong>Nama Lengkap:</strong><?php echo $sesName;?></p>
+      <p><strong>Tempat Lahir:</strong> <?php echo $sesTempatLahir; ?></p>
+      <p><strong>Tanggal Lahir:</strong> <?php echo $sesTanggalLahir; ?></p>
+      <p><strong>Hobi:</strong> <?php echo $sesHobi; ?></p>
+      <p><strong>Pasangan:</strong> <?php echo $sesPasangan; ?></p>
+      <p><strong>Pekerjaan:</strong> <?php echo $sesPekerjaan; ?></p>
+      <p><strong>Nama Orang Tua:</strong><?php echo $sesNamaOrangTua; ?></p>
+      <p><strong>Nama Kakak:</strong> <?php echo $sesNamaKakak; ?></p>
+      <p><strong>Nama Adik:</strong> <?php echo $sesNamaAdik; ?></p>
     </section>
 
     <section id="contact">

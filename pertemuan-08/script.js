@@ -1,23 +1,33 @@
+// ======================
+// MENU TOGGLE & PESAN
+// ======================
 document.getElementById("menuToggle").addEventListener("click", function () {
     const nav = document.querySelector("nav");
     nav.classList.toggle("active");
-    if (nav.classList.contains("active")) {
-        this.textContent = "\u2716";
-    } else {
-        this.textContent = "\u2630";
-    }
+    this.textContent = nav.classList.contains("active") ? "\u2716" : "\u2630";
 });
 
-document.getElementById("txtPesan").addEventListener("input", function () {
-    const panjang = this.value.length;
-    document.getElementById("charCount").textContent = panjang + "/200 karakter";
-});
+// ======================
+// CHAR COUNTER
+// ======================
+const txtPesan = document.getElementById("txtPesan");
+if (txtPesan) {
+    txtPesan.addEventListener("input", function () {
+        const panjang = this.value.length;
+        document.getElementById("charCount").textContent = panjang + "/200 karakter";
+    });
+}
 
+// ======================
+// RESPONSIVE LAYOUT
+// ======================
 document.addEventListener("DOMContentLoaded", function () {
     const homeSection = document.getElementById("home");
-    const ucapan = document.createElement("p");
-    ucapan.textContent = "Halo! Selamat datang di halaman saya!";
-    homeSection.appendChild(ucapan);
+    if (homeSection) {
+        const ucapan = document.createElement("p");
+        ucapan.textContent = "Halo! Selamat datang di halaman saya!";
+        homeSection.appendChild(ucapan);
+    }
 
     function setupCharCountLayout() {
         const label = document.querySelector('label[for="txtPesan"]');
@@ -30,18 +40,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!wrapper) {
             wrapper = document.createElement('div');
             wrapper.dataset.wrapper = 'pesan-wrapper';
-            wrapper.style.width = '100%';
-            wrapper.style.flex = '1';
             wrapper.style.display = 'flex';
             wrapper.style.flexDirection = 'column';
             label.insertBefore(wrapper, textarea);
             wrapper.appendChild(textarea);
             wrapper.appendChild(counter);
-            textarea.style.width = '100%';
-            textarea.style.boxSizing = 'border-box';
-            counter.style.color = '#555';
-            counter.style.fontSize = '14px';
-            counter.style.marginTop = '4px';
         }
         applyResponsiveLayout();
     }
@@ -54,35 +57,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!label || !span || !wrapper || !counter) return;
         const isMobile = window.matchMedia('(max-width: 600px)').matches;
         if (isMobile) {
-            label.style.display = 'flex';
             label.style.flexDirection = 'column';
-            label.style.alignItems = 'flex-start';
-            label.style.width = '100%';
-            span.style.minWidth = 'auto';
             span.style.textAlign = 'left';
-            span.style.paddingRight = '0';
-            span.style.flexShrink = '0';
-            span.style.marginBottom = '4px';
-            wrapper.style.flex = '1';
-            wrapper.style.display = 'flex';
-            wrapper.style.flexDirection = 'column';
-            counter.style.alignSelf = 'flex-end';
-            counter.style.width = 'auto';
         } else {
-            label.style.display = 'flex';
             label.style.flexDirection = 'row';
-            label.style.alignItems = 'baseline';
-            label.style.width = '100%';
-            span.style.minWidth = '180px';
             span.style.textAlign = 'right';
-            span.style.paddingRight = '16px';
-            span.style.flexShrink = '0';
-            span.style.marginBottom = '0';
-            wrapper.style.flex = '1';
-            wrapper.style.display = 'flex';
-            wrapper.style.flexDirection = 'column';
-            counter.style.alignSelf = 'flex-end';
-            counter.style.width = 'auto';
         }
     }
 
@@ -90,48 +69,9 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('resize', applyResponsiveLayout);
 });
 
-document.querySelector("form").addEventListener("submit", function (e) {
-    const nama = document.getElementById("txtNama");
-    const email = document.getElementById("txtEmail");
-    const pesan = document.getElementById("txtPesan");
-    e.preventDefault();
-    let isValid = true;
-
-    document.querySelectorAll(".error-msg").forEach(el => el.remove());
-    [nama, email, pesan].forEach(el => el.style.border = "");
-
-    if (nama.value.trim().length < 3) {
-        showError(nama, "Nama minimal 3 huruf dan tidak boleh kosong.");
-        isValid = false;
-    } else if (!/^[A-Za-z\s]+$/.test(nama.value)) {
-        showError(nama, "Nama hanya boleh berisi huruf dan spasi.");
-        isValid = false;
-    }
-    if (email.value.trim() === "") {
-        showError(email, "Email wajib diisi.");
-        isValid = false;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-        showError(email, "Format email tidak valid. Contoh: nama@mail.com");
-        isValid = false;
-    }
-
-    if (pesan.value.trim() === "") {
-        showError(pesan, "Pesan wajib diisi.");
-        isValid = false;
-    } else if (pesan.value.trim().length < 10) {
-        showError(pesan, "Pesan minimal 10 karakter agar lebih jelas.");
-        isValid = false;
-    }
-
-    if (!isValid) {
-        e.preventDefault();
-    } else {
-        alert("Terima kasih, " + nama.value + "!\nPesan Anda telah dikirim.");
-        //e.target.reset();
-        e.target.submit();
-    }
-});
-
+// ======================
+// FUNGSI ERROR HANDLER
+// ======================
 function showError(inputElement, message) {
     const label = inputElement.closest("label");
     const container = (label && label.contains(inputElement)) ? label : inputElement.parentNode;
@@ -146,8 +86,7 @@ function showError(inputElement, message) {
     small.style.marginTop = "4px";
     small.style.flexBasis = "100%";
     small.dataset.forId = inputElement.id;
-    const ref = (inputElement.nextSibling && inputElement.nextSibling.parentNode === container) ? inputElement.nextSibling : null;
-    container.insertBefore(small, ref);
+    container.appendChild(small);
     inputElement.style.border = "1px solid red";
     alignErrorMessage(small, inputElement);
 }
@@ -174,3 +113,79 @@ window.addEventListener("resize", () => {
         if (target) alignErrorMessage(small, target);
     });
 });
+
+// ======================
+// VALIDASI FORM KONTAK
+// ======================
+const formKontak = document.getElementById("formKontak");
+if (formKontak) {
+    formKontak.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const nama = document.getElementById("txtNama");
+        const email = document.getElementById("txtEmail");
+        const pesan = document.getElementById("txtPesan");
+        let isValid = true;
+
+        document.querySelectorAll(".error-msg").forEach(el => el.remove());
+        [nama, email, pesan].forEach(el => el.style.border = "");
+
+        if (nama.value.trim().length < 3) {
+            showError(nama, "Nama minimal 3 huruf dan tidak boleh kosong.");
+            isValid = false;
+        } else if (!/^[A-Za-z\s]+$/.test(nama.value)) {
+            showError(nama, "Nama hanya boleh berisi huruf dan spasi.");
+            isValid = false;
+        }
+        if (email.value.trim() === "") {
+            showError(email, "Email wajib diisi.");
+            isValid = false;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+            showError(email, "Format email tidak valid. Contoh: nama@mail.com");
+            isValid = false;
+        }
+        if (pesan.value.trim().length < 10) {
+            showError(pesan, "Pesan minimal 10 karakter agar lebih jelas.");
+            isValid = false;
+        }
+
+        if (isValid) {
+            alert("Terima kasih, " + nama.value + "!\nPesan Anda telah dikirim.");
+            formKontak.reset();
+        }
+    });
+}
+
+// ======================
+// VALIDASI FORM DATA DIRI
+// ======================
+const formDataDiri = document.getElementById("formDataDiri");
+if (formDataDiri) {
+    formDataDiri.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const namaDiri = document.getElementById("txtNamaDiri");
+        const umur = document.getElementById("txtUmur");
+        const alamat = document.getElementById("txtAlamat");
+        let isValid = true;
+
+        document.querySelectorAll(".error-msg").forEach(el => el.remove());
+        [namaDiri, umur, alamat].forEach(el => el.style.border = "");
+
+        if (namaDiri.value.trim().length < 3) {
+            showError(namaDiri, "Nama lengkap minimal 3 huruf.");
+            isValid = false;
+        }
+        if (umur.value <= 0) {
+            showError(umur, "Umur harus lebih dari 0.");
+            isValid = false;
+        }
+        if (alamat.value.trim() === "") {
+            showError(alamat, "Alamat wajib diisi.");
+            isValid = false;
+        }
+
+        if (isValid) {
+            alert("Data diri " + namaDiri.value + " berhasil dikirim!");
+            formDataDiri.reset();
+        }
+    });
+}
