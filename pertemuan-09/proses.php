@@ -1,11 +1,10 @@
 <?php
 session_start();
-$sesnama = $_POST["txtNama"];
-$sesemail = $_POST["txtEmail"];
-$sespesan = $_POST["txtPesan"];
-$_SESSION["sesnama"] = $sesnama;
-$_SESSION["sesemail"] = $sesemail;
-$_SESSION["sespesan"] = $sespesan;
+$arrBiodata = [
+"Nama" => $_POST["txtNm"] ?? "",
+"Email" => $_POST["txtEmail"] ?? "",
+"Pesan" => $_POST["txtPesan"] ?? ""
+];
 
 $arrBiodata = [
 "nim" => $_POST["txtNim"] ?? "",
