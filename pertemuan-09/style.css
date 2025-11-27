@@ -52,7 +52,8 @@ header li a:active {
 #home:target~header nav a[href="#home"],
 #about:target~header nav a[href="#about"],
 #contact:target~header nav a[href="#contact"],
-#biodata:target~header nav a[href="#biodata"] {
+#biodata:target~header nav a[href="#biodata"],
+#datacontact:target~header nav a[href="#datacontact"] {
   background: #fff;
   color: #003366;
   font-weight: bold;

@@ -40,6 +40,8 @@ endif;
         <li><a href="#home">Beranda</a></li>
         <li><a href="#about">Tentang</a></li>
         <li><a href="#contact">Kontak</a></li>
+        <li><a href="#biodata">Biodata</a></li>
+        <li><a href="#datacontact">Data Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -130,11 +132,11 @@ endif;
       <form action="proses.php" method="POST">
 
         <label for="txtNama"><span>Nama:</span>
-          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
+          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan Nama" required>
         </label>
 
         <label for="txtEmail"><span>Email:</span>
-          <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" required autocomplete="email">
+          <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan Email" required>
         </label>
 
         <label for="txtPesan"><span>Pesan Anda:</span>
@@ -154,9 +156,22 @@ endif;
         <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
       <?php endif; ?>
 
+<?php
+    $datacontact = $_SESSION["datacontact"] ?? [];
 
+    $datacontact = [
+      "txtNama" => ["label" => "Nama:", "suffix" => ""],
+      "txtEmail" => ["label" => "Email:", "suffix" => ""],
+      "txtPesan" => ["label" => "Pesan:", "suffix" => ""],
+    ];
+    ?>
 
     </section>
+      <section id="datacontact">
+        <h2>Data Kontak anda</h2>
+        <?= tampilkanBiodata($contactconfig, $datacontact); ?>
+      </section>
+
   </main>
 
   <footer>

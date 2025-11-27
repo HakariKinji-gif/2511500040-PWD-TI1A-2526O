@@ -1,10 +1,14 @@
 <?php
 session_start();
-$arrBiodata = [
-"Nama" => $_POST["txtNm"] ?? "",
+$arrdatacontact = [
+"Nama" => $_POST["txtNama"] ?? "",
 "Email" => $_POST["txtEmail"] ?? "",
 "Pesan" => $_POST["txtPesan"] ?? ""
 ];
+
+$_SESSION["datacontact"] = $arrdatacontact;
+header("location: index.php#biodata");
+header("location: index.php");
 
 $arrBiodata = [
 "nim" => $_POST["txtNim"] ?? "",
@@ -22,4 +26,5 @@ $arrBiodata = [
 $_SESSION["biodata"] = $arrBiodata;
 header("location: index.php#contact");
 header("location: index.php");
+
 ?>
