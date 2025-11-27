@@ -22,3 +22,15 @@ $html .= "<p><strong>{$label}</strong> {$nilai}{$suffix}</p>";
 }
 return $html;
 }
+
+function tampilkandatacontact($conf, $arr)
+{
+$html = "";
+foreach ($conf as $a => $b) {
+$label = $b["label"];
+$nilai = bersihkan($arr[$a] ?? '');
+$suffix = $b["suffix"];
+$html .= "<p><strong>{$label}</strong> {$nilai}{$suffix}</p>";
+}
+return $html;
+}
