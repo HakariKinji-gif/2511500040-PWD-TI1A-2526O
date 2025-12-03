@@ -5,5 +5,5 @@
   <li>memasukkan kode pada koneksi.php</li>
   <li>membuat database baru di PHPMyAdmin</li>
   <li>membuat tabel tamu di MySQL</li>
-  <li></li>
+  <li>memasukkan kode pada read.php</li>
   </ol>
