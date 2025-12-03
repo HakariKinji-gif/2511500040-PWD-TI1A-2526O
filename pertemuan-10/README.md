@@ -9,4 +9,5 @@
   <li>menambah record untuk tabel tb;_tamu sebanyak 1 record</li>
   <li>mencopy read.php kemudian rename menjadi read_inc.php lalu memasukkan kode</li>
   <li>mengubah kode pada index.php di baris 146</li>
+  <li>menghapus kode baris 133-141 di index.php</li>
   </ol>
