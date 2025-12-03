@@ -6,4 +6,5 @@
   <li>membuat database baru di PHPMyAdmin</li>
   <li>membuat tabel tamu di MySQL</li>
   <li>memasukkan kode pada read.php</li>
+  <li>menambah record untuk tabel tb;_tamu sebanyak 1 record</li>
   </ol>
