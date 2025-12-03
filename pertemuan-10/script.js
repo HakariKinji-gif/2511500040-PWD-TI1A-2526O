@@ -1,4 +1,4 @@
-~~document.getElementById("menuToggle").addEventListener("click", function () {
+document.getElementById("menuToggle").addEventListener("click", function () {
     const nav = document.querySelector("nav");
     nav.classList.toggle("active");
     if (nav.classList.contains("active")) {
