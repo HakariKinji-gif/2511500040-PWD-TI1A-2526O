@@ -7,4 +7,5 @@
   <li>membuat tabel tamu di MySQL</li>
   <li>memasukkan kode pada read.php</li>
   <li>menambah record untuk tabel tb;_tamu sebanyak 1 record</li>
+  <li>mencopy read.php kemudian rename menjadi read_inc.php lalu memasukkan kode</li>
   </ol>
