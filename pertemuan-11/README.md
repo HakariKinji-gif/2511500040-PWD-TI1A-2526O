@@ -11,4 +11,5 @@
   <li>mengubah kode pada index.php di baris 146</li>
   <li>menghapus kode baris 133-141 di index.php</li>
   <li>Update fungsi.php untuk helper redirect sederhana</li>
+  <li>Tambah penangkap pesan sukses/gagal</li>
   </ol>
