@@ -10,4 +10,5 @@
   <li>mencopy read.php kemudian rename menjadi read_inc.php lalu memasukkan kode</li>
   <li>mengubah kode pada index.php di baris 146</li>
   <li>menghapus kode baris 133-141 di index.php</li>
+  <li>Update fungsi.php untuk helper redirect sederhana</li>
   </ol>
