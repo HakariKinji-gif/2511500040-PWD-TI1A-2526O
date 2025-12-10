@@ -12,5 +12,6 @@
   <li>menghapus kode baris 133-141 di index.php</li>
   <li>Update fungsi.php untuk helper redirect sederhana</li>
   <li>Tambah penangkap pesan sukses/gagal</li>
-  <li>Menambahkan kode untuk Tampilkan flash message</li>
+  <li>Menambahkan kode untuk Tampilkan flash message</li>\
+  <li>Menambahkan kode pada index.php untuk menampilkan nilai lama dari form</li>
   </ol>
