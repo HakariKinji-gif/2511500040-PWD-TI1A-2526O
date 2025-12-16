@@ -7,6 +7,6 @@ Hari ini, Rabu 13 Desember 2025 saya :
 <ol>
 <li>update fungsi.php untuk helper redirect sederhana</li>
 <li>update index.php menambah flash message dari session</li>
-<li></li>
+<li>menambahkan Kolom nomor urut di read.php</li>
 <li></li>
 </ol>
