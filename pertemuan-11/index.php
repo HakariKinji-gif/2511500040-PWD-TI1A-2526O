@@ -152,6 +152,11 @@ require_once __DIR__ . '/fungsi.php';
           <small id="charCount">0/200 karakter</small>
         </label>
 
+        <label>2 + 3 = </label>
+<input type="text" name="captcha" required
+       value="<?= $old['captcha'] ?? '' ?>">
+
+
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
       </form>

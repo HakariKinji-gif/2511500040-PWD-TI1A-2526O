@@ -40,6 +40,13 @@ if ($pesan !== "" && strlen($pesan) < 10) {
     $errors[] = "Pesan minimal 10 karakter";
 }
 
+$captcha = trim($_POST['captcha'] ?? '');
+$_SESSION['old']['captcha'] = $captcha;
+
+if ($captcha !== "5") {
+    $errors[] = "Captcha salah";
+}
+
 if (!empty($errors)) {
     $_SESSION["flash_error"] = implode("<br>", $errors);
     header("Location: index.php#contact");
@@ -63,7 +70,6 @@ if ($stmt) {
 } else {
     $_SESSION["flash_error"] = "Query error";
 }
-
 
 header("Location: index.php#contact");
 exit;

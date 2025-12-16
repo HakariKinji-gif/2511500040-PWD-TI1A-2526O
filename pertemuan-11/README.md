@@ -9,4 +9,5 @@ Hari ini, Rabu 13 Desember 2025 saya :
 <li>update index.php menambah flash message dari session</li>
 <li>menambahkan Kolom nomor urut di read.php</li>
 <li>menambahkan captcha sederhana</li>
+<li>menambahkan kode validasi di proses.php untuk captcha</li>
 </ol>
