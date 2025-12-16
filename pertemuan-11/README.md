@@ -1,17 +1,12 @@
-# Pertemuan-10
+# pertemuan-10
 
+IM : 2511500040<br>
+Nama : Hengky Febrilien<br>
+
+Hari ini, Rabu 25 November 2025 saya :
 <ol>
-  <li>membuat folder koneksi.php di pertemuan 10</li>
-  <li>memasukkan kode pada koneksi.php</li>
-  <li>membuat database baru di PHPMyAdmin</li>
-  <li>membuat tabel tamu di MySQL</li>
-  <li>memasukkan kode pada read.php</li>
-  <li>menambah record untuk tabel tb;_tamu sebanyak 1 record</li>
-  <li>mencopy read.php kemudian rename menjadi read_inc.php lalu memasukkan kode</li>
-  <li>mengubah kode pada index.php di baris 146</li>
-  <li>menghapus kode baris 133-141 di index.php</li>
-  <li>Update fungsi.php untuk helper redirect sederhana</li>
-  <li>Tambah penangkap pesan sukses/gagal</li>
-  <li>Menambahkan kode untuk Tampilkan flash message</li>\
-  <li>Menambahkan kode pada index.php untuk menampilkan nilai lama dari form</li>
-  </ol>
+<li>update fungsi.php untuk helper redirect sederhana</li>
+<li></li>
+<li></li>
+<li></li>
+</ol>

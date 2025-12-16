@@ -1,13 +1,20 @@
-# Pertemuan-10
+# pertemuan-10
 
+IM : 2511500040<br>
+Nama : Hengky Febrilien<br>
+
+Hari ini, Rabu 25 November 2025 saya mempelajari:
 <ol>
-  <li>membuat folder koneksi.php di pertemuan 10</li>
-  <li>memasukkan kode pada koneksi.php</li>
-  <li>membuat database baru di PHPMyAdmin</li>
-  <li>membuat tabel tamu di MySQL</li>
-  <li>memasukkan kode pada read.php</li>
-  <li>menambah record untuk tabel tb;_tamu sebanyak 1 record</li>
-  <li>mencopy read.php kemudian rename menjadi read_inc.php lalu memasukkan kode</li>
-  <li>mengubah kode pada index.php di baris 146</li>
-  <li>menghapus kode baris 133-141 di index.php</li>
-  </ol>
+<li>extract bahan pertemuan 10</li>
+<li>tambahkan file baru dengan nama koneksi.php</li>
+<li>menambahkan kode pada file koneksi.php</li>
+<li>login phpmyadmin dan buka database lalu isi nama database</li>
+<li>buka tab SQL lalu ketik querry pada kotak isian SQL untuk membuat tabel tbl_tamu yang digunaakan untuk emnyimpan data dari form contact</li>
+<li>buat file baru read.php</li>
+<li>tambahkan kode pada file read.php</li>
+<li>pada tab insert isilah baris cnama, cemail, dan cpesan dan klik tombol GO</li>
+<li>buka tab browser untuk melihat hasil yang sudha kita input pada tab insert</li>
+<li>copy file read.php dan rename menjadi read_inc.php lalu modif kodenya</li>
+<li>pada file index,php baris 146 ganti dengan kode pada bahan ajar</li>
+<li></li>
+</ol>
