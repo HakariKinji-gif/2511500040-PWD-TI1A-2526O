@@ -8,5 +8,5 @@ Hari ini, Rabu 13 Desember 2025 saya :
 <li>update fungsi.php untuk helper redirect sederhana</li>
 <li>update index.php menambah flash message dari session</li>
 <li>menambahkan Kolom nomor urut di read.php</li>
-<li></li>
+<li>menambahkan captcha sederhana</li>
 </ol>
