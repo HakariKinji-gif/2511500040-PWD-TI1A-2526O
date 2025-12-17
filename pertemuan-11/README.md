@@ -11,4 +11,5 @@ Hari ini, Rabu 13 Desember 2025 saya :
 <li>menambahkan captcha sederhana</li>
 <li>menambahkan kode validasi di proses.php untuk captcha</li>
 <li>update read.php untuk kolom Created At</li>
+<li>copy file sql di pertemuan 11</li>
 </ol>
