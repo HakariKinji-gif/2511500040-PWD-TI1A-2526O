@@ -46,7 +46,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,7 +55,7 @@
 </head>
 <body>
   <header>
-    <h1>INi Header</h1>
+    <h1>Ini Header</h1>
   <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
     &#9776;
   </button>
@@ -78,7 +78,6 @@
           <?= $flash_error; ?>
       </div>
     <?php endif; ?>
-
     <form action="proses_update.php" method="POST">
 
       <input type="text" name="cid" value="<?= (int)$cid; ?>">
@@ -98,14 +97,14 @@
           placeholder="Tuliskan pesan anda..."
           required><?= !empty($pesan) ? $pesan: '' ?></textarea>
       </label>
-      <label for="Captcha"><span>Captcha 2x3 = </span>
-        <input type="number" id="Captcha" name="CaptchaEd"
+      <label for="txtCaptcha"><span>Captcha 2 x 3 = </span>
+        <input type="number" id="txtCaptcha" name="txtCaptchaEd"
           placeholder="Jawab pertanyaan..." required>
       </label>
 
       <button type="submit">Kirim</button>
       <button type="reset">Batal</button>
-      <a href="read.php" classs="reset">Kembali</a>
+      <a href="read.php" class="reset">Kembali</a>
     </form>
   </section>
 </main>

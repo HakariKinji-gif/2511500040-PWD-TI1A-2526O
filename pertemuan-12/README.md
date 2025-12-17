@@ -15,4 +15,5 @@ Hari ini, Rabu 13 Desember 2025 saya :
 <li>Mengupdate captcha</li>
 <li>menambahkan tombol edit di read.php</li>
 <li>menambahkan kode penampil flash sukses dan error</li>
+<li>menambahkan file baru proses_update.php dan menambahkan kode baru di file tersebut</li>
 </ol>
