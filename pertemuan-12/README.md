@@ -14,4 +14,5 @@ Hari ini, Rabu 13 Desember 2025 saya :
 <li>copy file sql di pertemuan 11</li>
 <li>Mengupdate captcha</li>
 <li>menambahkan tombol edit di read.php</li>
+<li>menambahkan kode penampil flash sukses dan error</li>
 </ol>
