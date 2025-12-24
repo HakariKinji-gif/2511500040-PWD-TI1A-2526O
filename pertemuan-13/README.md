@@ -10,4 +10,5 @@ Nama saya Hengky Febrilien<br>
 <li> Menambahkan parameter cid untuk link delete di read.php</li>
 <li> Memperbaiki file proses_delet.php dan menggunakan parameter cid</li>
 <li> Menambahkan deletion confirmation untuk link delete di read.php</li>
+<li> Menambahkan detail untuk penghapusan file</li>
 </ol>
