@@ -8,4 +8,5 @@ Nama saya Hengky Febrilien<br>
 <li> Mengcopy kode proses_update.php ke proses_delete.php</li>
 <li> Mengupdate kode untuk proses_delete.php</li>
 <li> Menambahkan parameter cid untuk link delete di read.php</li>
+<li> Memperbaiki file proses_delet.php dan menggunakan parameter cid</li>
 </ol>

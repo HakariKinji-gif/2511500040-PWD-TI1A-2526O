@@ -4,30 +4,30 @@
   require_once __DIR__ . '/fungsi.php';
 
   #validasi cid wajib angka dan > 0
-  // $cid = filter_input(INPUT_POST, 'cid', FILTER_VALIDATE_INT, [
-  //   'options' => ['min_range' => 1]
-  // ]);
+  $cid = filter_input(INPUT_GET, 'cid', FILTER_VALIDATE_INT, [
+    'options' => ['min_range' => 1]
+  ]);
 
-  // if (!$cid) {
-  //   $_SESSION['flash_error'] = 'CID Tidak Valid.';
-  //   redirect_ke('edit.php?cid='. (int)$cid);
-  // }
+  if (!$cid) {
+    $_SESSION['flash_error'] = 'CID Tidak Valid.';
+    redirect_ke('read.php');
+  }
 
   #Validasi sederhana
   $errors = []; #ini array untuk menampung semua error yang ada
 
 
 
-  $stmt = mysqli_prepare($conn, "DELETE FROM tbl_tamu");
-                                #WHERE cid = ?");
+  $stmt = mysqli_prepare($conn, "DELETE FROM tbl_tamu
+                                 WHERE cid = ?");
   if (!$stmt) {
     #jika gagal prepare, kirim pesan error (tanpa detail sensitif)
     $_SESSION['flash_error'] = 'Terjadi kesalahan sistem (prepare gagal).';
-    redirect_ke('edit.php');
+    redirect_ke('read.php');
   }
 
   #bind parameter dan eksekusi (s = string, i = integer)
-  #mysqli_stmt_bind_param($stmt, "sssi", $nama, $email, $pesan, $cid);
+  mysqli_stmt_bind_param($stmt, "i", $cid);
 
   if (mysqli_stmt_execute($stmt)) { #jika berhasil, kosongkan old value
     /*
