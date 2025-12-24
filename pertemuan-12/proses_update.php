@@ -50,7 +50,7 @@
   }
 
   if($captcha !== '6') {
-    $errors[] = 'Jawaban ' . $captcha .' Captcha salah.';
+    $errors[] = 'Jawaban ' . $captcha .'  Captcha salah.';
   }
 
 if(!empty($errors)) {
