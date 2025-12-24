@@ -4,3 +4,5 @@ Hari ini, Mapel PWD pertemuan terakhir Rabu 24 Desember 2025<br>
 Nama saya Hengky Febrilien<br>
 <ol>
 <li> mengimport SQL Bahan pertemuan 13</li>
+<li> Menambah link delete untuk file proses_update.php</li>
+</ol>
