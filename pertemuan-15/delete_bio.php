@@ -17,7 +17,7 @@ if (!$cmid) {
 $stmt = mysqli_prepare($conn, "DELETE FROM biodata_mahasiswa WHERE cmid = ?");
 
 if (!$stmt) {
-    $_SESSION['flash_error_bio'] = 'Terjadi kesalahan sistem (prepare gagal).';
+    $_SESSION['flash_error_bio'] = 'Terjadi kesalahan sistem.';
     redirect_ke('read_biomahasiswa.php');
 }
 

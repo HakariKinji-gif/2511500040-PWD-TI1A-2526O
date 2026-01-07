@@ -8,4 +8,5 @@ Hengky Febrilien
 <li>Memisahkan flash message di index.php agar tidak bertabrakan dengan form kontak</li>
 <li>menambahkan file baru read_biomahasiswa.php dan memasukkan kode</li>
 <li>membuat file baru delete_bio.php lalu menambahkan kode</li>
+<li>Mengubah seluruh ID flash message pada delete_bio.php dan linking pada table MySQL</li>
 </ol>
