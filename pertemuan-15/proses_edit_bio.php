@@ -3,13 +3,11 @@ session_start();
 require __DIR__ . '/koneksi.php';
 require_once __DIR__ . '/fungsi.php';
 
-# Cek method form, hanya izinkan POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $_SESSION['flash_error_bio'] = 'Akses tidak valid.';
     redirect_ke('read_biomahasiswa.php');
 }
 
-# Validasi cmid dari POST
 $cmid = filter_input(INPUT_POST, 'cmid', FILTER_VALIDATE_INT, [
     'options' => ['min_range' => 1]
 ]);
@@ -19,7 +17,6 @@ if (!$cmid) {
     redirect_ke('edit_bio.php?cmid=' . (int)$_POST['cmid']);
 }
 
-# Ambil dan bersihkan nilai dari form
 $nim = bersihkan($_POST['txtNim'] ?? '');
 $nama = bersihkan($_POST['txtNmLengkap'] ?? '');
 $tempat_lahir = bersihkan($_POST['txtT4Lhr'] ?? '');
@@ -31,39 +28,32 @@ $nama_ortu = bersihkan($_POST['txtNmOrtu'] ?? '');
 $nama_kakak = bersihkan($_POST['txtNmKakak'] ?? '');
 $nama_adik = bersihkan($_POST['txtNmAdik'] ?? '');
 
-# Validasi input
 $errors = [];
 
-# Validasi Nama
 if (empty($nama)) {
     $errors[] = 'Nama lengkap wajib diisi.';
 } elseif (strlen($nama) < 2) {
     $errors[] = 'Nama minimal 2 karakter.';
 }
 
-# Validasi Tempat Lahir
 if (empty($tempat_lahir)) {
     $errors[] = 'Tempat lahir wajib diisi.';
 }
 
-# Validasi Tanggal Lahir
 if (empty($tanggal_lahir)) {
     $errors[] = 'Tanggal lahir wajib diisi.';
 } elseif (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $tanggal_lahir)) {
     $errors[] = 'Format tanggal lahir tidak valid. Gunakan format YYYY-MM-DD.';
 }
 
-# Validasi Hobi
 if (empty($hobi)) {
     $errors[] = 'Hobi wajib diisi.';
 }
 
-# Validasi Nama Orang Tua
 if (empty($nama_ortu)) {
     $errors[] = 'Nama orang tua wajib diisi.';
 }
 
-# Jika ada error, simpan nilai lama dan redirect
 if (!empty($errors)) {
     $_SESSION['old_edit'] = [
         'nama' => $nama,
@@ -81,7 +71,6 @@ if (!empty($errors)) {
     redirect_ke('edit_bio.php?cmid=' . $cmid);
 }
 
-# Update data di database menggunakan prepared statement
 $sql = "UPDATE biodata_mahasiswa SET 
         cnama = ?, 
         ctempat_lahir = ?, 
@@ -101,7 +90,6 @@ if (!$stmt) {
     redirect_ke('edit_bio.php?cmid=' . $cmid);
 }
 
-# Bind parameter dan eksekusi
 mysqli_stmt_bind_param($stmt, "sssssssssi", 
     $nama, $tempat_lahir, $tanggal_lahir, $hobi, 
     $pasangan, $pekerjaan, $nama_ortu, $nama_kakak, 
@@ -111,7 +99,6 @@ if (mysqli_stmt_execute($stmt)) {
     unset($_SESSION['old_edit']);
     $_SESSION['flash_sukses_bio'] = 'Data mahasiswa berhasil diperbarui!';
     
-    # Update session biodata jika data yang diupdate adalah data yang sedang ditampilkan
     if (isset($_SESSION['biodata']) && $_SESSION['biodata']['nim'] == $nim) {
         $_SESSION['biodata'] = [
             "nim" => $nim,
@@ -127,7 +114,6 @@ if (mysqli_stmt_execute($stmt)) {
         ];
     }
     
-    # Konsep PRG: Redirect ke halaman data mahasiswa
     redirect_ke('read_biomahasiswa.php');
 } else {
     $_SESSION['old_edit'] = [

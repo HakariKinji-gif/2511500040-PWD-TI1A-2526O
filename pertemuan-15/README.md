@@ -10,5 +10,6 @@ Hengky Febrilien
 <li>membuat file baru delete_bio.php lalu menambahkan kode</li>
 <li>Mengubah seluruh ID flash message pada delete_bio.php dan linking pada table MySQL</li>
 <li>Menambahkan file proses_edit_bio.php</li>
+<li>Menambahkan kode pada file proses_edit_bio.php dan mengubah ID flash message agar tidak error</li>
 <li>Memperbaiki file read_biomahasiswa.php di bagian styling flash message</li>
 </ol>
