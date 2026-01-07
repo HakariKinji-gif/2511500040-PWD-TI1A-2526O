@@ -58,6 +58,26 @@ nav ul li a:hover {
   padding: 20px;
 }
 
+.pesan-status {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.pesan-sukses {
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
+}
+
+.pesan-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
 .data-mahasiswa table {
   width: 100%;
   border-collapse: collapse;
@@ -145,6 +165,7 @@ nav ul li a:hover {
     </header>
 
     <main class="data-mahasiswa">
+      
         <h2>Daftar Biodata Mahasiswa</h2>
         
         <?php if (!empty($flash_sukses)): ?>
@@ -187,7 +208,7 @@ nav ul li a:hover {
         <a href="edit_bio.php?cmid=<?= (int)$row['cmid']; ?>" class="btn-edit">Edit</a>
         <a href="delete_bio.php?cmid=<?= (int)$row['cmid']; ?>"
            class="btn-hapus"
-           onclick="return confirm('Hapus data <?= htmlspecialchars($row['cnama']); ?> (NIM: <?= htmlspecialchars($row['cnim']); ?>)?')">
+           onclick="return confirm('Hapus data <?= htmlspecialchars($row['cnama']); ?>?')">
             Hapus
                                 </a>
                             </td>
