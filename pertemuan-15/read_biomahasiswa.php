@@ -105,7 +105,7 @@ nav ul li a:hover {
   font-size: 14px;
   font-weight: 600;
   border-radius: 4px;
-  border: 1px solid var(--abu-tua);
+  border: 1px solid #333;
   text-decoration: none;
   transition: all 0.2s ease;
 }
