@@ -5,7 +5,7 @@ require_once __DIR__ . '/fungsi.php';
 
 # Cek method form, hanya izinkan POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    $_SESSION['flash_error'] = 'Akses tidak valid.';
+    $_SESSION['flash_error_bio'] = 'Akses tidak valid.';
     redirect_ke('index.php#biodata');
 }
 
@@ -95,7 +95,7 @@ if (!empty($errors)) {
         'nama_adik' => $nama_adik
     ];
     
-    $_SESSION['flash_error'] = implode('<br>', $errors);
+    $_SESSION['flash_error_bio'] = implode('<br>', $errors);
     redirect_ke('index.php#biodata');
 }
 
@@ -114,14 +114,14 @@ $_SESSION['biodata'] = [
 ];
 
 # Insert data ke database menggunakan prepared statement
-$sql = "INSERT INTO tbl_mahasiswa (cnim, cnama, ctempat_lahir, ctanggal_lahir, 
+$sql = "INSERT INTO biodata_mahasiswa (cnim, cnama, ctempat_lahir, ctanggal_lahir, 
         chobi, cpasangan, cpekerjaan, cnama_ortu, cnama_kakak, cnama_adik) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
 $stmt = mysqli_prepare($conn, $sql);
 
 if (!$stmt) {
-    $_SESSION['flash_error'] = 'Terjadi kesalahan sistem (prepare gagal).';
+    $_SESSION['flash_error_bio'] = 'Terjadi kesalahan sistem (prepare gagal).';
     redirect_ke('index.php#biodata');
 }
 
@@ -133,9 +133,9 @@ mysqli_stmt_bind_param($stmt, "ssssssssss",
 
 if (mysqli_stmt_execute($stmt)) {
     unset($_SESSION['old_biodata']);
-    $_SESSION['flash_sukses'] = 'Data biodata mahasiswa berhasil disimpan!';
+    $_SESSION['flash_sukses_bio'] = 'Data Mahasiswa berhasil disimpan!';
 } else {
-    $_SESSION['flash_error'] = 'Data gagal disimpan. Silakan coba lagi.';
+    $_SESSION['flash_error_bio'] = 'Data gagal tersimpan, silahkan coba lagi.';
     $_SESSION['old_biodata'] = [
         'nim' => $nim,
         'nama' => $nama,

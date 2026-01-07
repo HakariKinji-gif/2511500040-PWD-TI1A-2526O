@@ -33,14 +33,34 @@ require_once __DIR__ . '/fungsi.php';
       <h2>Selamat Datang</h2>
       <?php
       echo "halo dunia!<br>";
-      echo "nama saya hadi";
+      echo "nama saya Hengky Febrilien";
       ?>
       <p>Ini contoh paragraf HTML.</p>
     </section>
+    
+    <?php
+    $flash_sukses_bio = $_SESSION['flash_sukses_bio'] ?? ''; #jika query sukses
+    $flash_error_bio  = $_SESSION['flash_error_bio'] ?? ''; #jika ada error
+    $old              = $_SESSION['old'] ?? []; #untuk nilai lama form
+
+    unset($_SESSION['flash_sukses_bio'], $_SESSION['flash_error_bio'], $_SESSION['old']); #bersihkan 3 session ini
+    ?>
 
     <section id="biodata">
-      <h2>Biodata Sederhana Mahasiswa</h2>
+      <h2>Biodata Mahasiswa</h2>
       <form action="proses_bio.php" method="POST">
+
+        <?php if (!empty($flash_sukses_bio)): ?>
+        <div style="padding:10px; margin-bottom:10px; background:#d4edda; color:#155724; border-radius:6px;">
+          <?= $flash_sukses_bio; ?>
+        </div>
+      <?php endif; ?>
+
+      <?php if (!empty($flash_error_bio)): ?>
+        <div style="padding:10px; margin-bottom:10px; background:#f8d7da; color:#721c24; border-radius:6px;">
+          <?= $flash_error_bio ; ?>
+        </div>
+      <?php endif; ?>
 
         <label for="txtNim"><span>NIM:</span>
           <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required>
@@ -158,7 +178,7 @@ require_once __DIR__ . '/fungsi.php';
             value="<?= isset($old['captcha']) ? htmlspecialchars($old['captcha']) : '' ?>">
         </label>
 
-        <button type=" submit">Kirim</button>
+        <button type="submit">Kirim</button>
           <button type="reset">Batal</button>
       </form>
 
