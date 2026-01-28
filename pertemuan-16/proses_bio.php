@@ -45,7 +45,7 @@ if ($stmt) {
     if (mysqli_stmt_execute($stmt)) {
         unset($_SESSION['old']);
         $_SESSION['flash_sukses'] = 'Data berhasil disimpan!';
-        header("location: read.php?status=sukses"); 
+        header("location: read_biodosen.php?status=sukses"); 
     } else {
         $_SESSION['flash_error'] = 'Gagal simpan: ' . mysqli_error($conn);
         header("location: index.php#biodata");
