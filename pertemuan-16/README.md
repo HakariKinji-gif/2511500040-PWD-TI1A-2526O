@@ -12,5 +12,6 @@ Hengky Febrilien
 <li>Memperbaiki kode validasi dan menambahkan flash message di proses_bio.php</li>
 <li>Membuat file baru sebagai file pembaca dengan nama read_biodosen.php</li>
 <li>Menambahkan kode seleksi data di read_biodosen.php</li>
+<li>Menambahkan kode flash message di read_biodosen.php</li>
 
 </ol>
