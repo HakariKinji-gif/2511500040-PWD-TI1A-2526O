@@ -9,4 +9,5 @@ Hengky Febrilien
 <li>menambahkan kode method post pada kode di file proses_bio.php</li>
 <li>Menambahkan kode fungsi untuk membersihkan data dari form di proses_bio.php</li>
 <li>Menambahkan kode validasi untuk mengisi form</li>
+<li>Memperbaiki kode validasi dan menambahkan flash message di proses_bio.php</li>
 </ol>
