@@ -3,11 +3,21 @@ session_start();
 require __DIR__ . './koneksi.php';
 require_once __DIR__ . '/fungsi.php';
 
-/*
-	ikuti cara penulisan proses.php untuk validasi, sanitasi, RPG, data old
-	dan insert ke tbl_tamu termasuk flash message ke index.php#biodata
-	bedanya, kali ini diterapkan untuk biodata dosen bukan tamu
-*/
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    $_SESSION['flash_error_bio'] = 'Akses tidak valid.';
+    redirect_ke('index.php#biodata');
+}
+
+$kode     = bersihkan($_POST['txtKodeDos'] ?? '');
+$nama     = bersihkan($_POST['txtNmDosen'] ?? '');
+$alamat   = bersihkan($_POST['txtAlRmh'] ?? '');
+$tanggal  = bersihkan($_POST['txtTglDosen'] ?? '');
+$jja      = bersihkan($_POST['txtJJA'] ?? '');
+$prodi    = bersihkan($_POST['txtProdi'] ?? '');
+$nohp     = bersihkan($_POST['txtNoHP'] ?? '');
+$pasangan = bersihkan($_POST['txtNamaPasangan'] ?? '');
+$anak     = bersihkan($_POST['txtNmAnak'] ?? '');
+$ilmu     = bersihkan($_POST['txtBidangIlmu'] ?? '');
 
 $arrBiodata = [
   "kodedos" => $_POST["txtKodeDos"] ?? "",

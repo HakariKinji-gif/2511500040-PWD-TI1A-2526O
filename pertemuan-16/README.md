@@ -7,4 +7,5 @@ Hengky Febrilien
 <li>Membuat tabel baru tbl_biodata_dosen untuk menampung record biodata dosen</li>
 <li>Memperbaiki ID Variable dari kode di proses.php</li>
 <li>menambahkan kode method post pada kode di file proses_bio.php</li>
+<li>Menambahkan kode fungsi untuk membersihkan data dari form di proses_bio.php</li>
 </ol>
