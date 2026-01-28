@@ -70,8 +70,8 @@ require_once __DIR__ . '/fungsi.php';
           <input type="text" id="txtNoHP" name="txtNoHP" placeholder="Masukkan Nomor HP" required>
         </label>
 
-        <label for="txNamaPasangan"><span>Nama Pasangan:</span>
-          <input type="text" id="txNamaPasangan" name="txNamaPasangan" placeholder="Masukkan Nama Pasangan" required>
+        <label for="txtNamaPasangan"><span>Nama Pasangan:</span>
+          <input type="text" id="txtNamaPasangan" name="txtNamaPasangan" placeholder="Masukkan Nama Pasangan" required>
         </label>
 
         <label for="txtNmAnak"><span>Nama Anak:</span>
