@@ -100,8 +100,8 @@ $arrBiodata = [
   "tanggal" => $_POST["txtTglDosen"] ?? "",
   "jja" => $_POST["txtJJA"] ?? "",
   "prodi" => $_POST["txtProdi"] ?? "",
-  "nohp" => $_POST["txtNamaPasangan"] ?? "",
-  "pasangan" => $_POST["txNamaPasangan"] ?? "",
+  "nohp" => $_POST["txtNoHP"] ?? "",
+  "pasangan" => $_POST["txtNamaPasangan"] ?? "",
   "anak" => $_POST["txtNmAnak"] ?? "",
   "ilmu" => $_POST["txtBidangIlmu"] ?? ""
 ];
